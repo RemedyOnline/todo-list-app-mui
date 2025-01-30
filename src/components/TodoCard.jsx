@@ -1,4 +1,10 @@
-import { Button, Card, CardContent, Typography } from "@mui/material";
+import {
+	Button,
+	Card,
+	CardContent,
+	Typography,
+	CardActions,
+} from "@mui/material";
 import PropTypes from "prop-types";
 
 const TodoCard = ({ id, todo, getTodoDetails }) => {
@@ -10,14 +16,23 @@ const TodoCard = ({ id, todo, getTodoDetails }) => {
 				<Card
 					sx={{
 						background: "#999",
+						display: "flex",
+						maxWidth: "500px",
+						minHeight: "100px",
 					}}
 				>
-					<CardContent>
-						<Typography variant="h6">{todo}</Typography>
+					<CardContent
+						sx={{
+							width: "300px",
+						}}
+					>
+						<Typography>{todo}</Typography>
+					</CardContent>
+					<CardActions>
 						<Button onClick={() => getTodoDetails(id)} variant="contained">
 							View Details
 						</Button>
-					</CardContent>
+					</CardActions>
 				</Card>
 			</section>
 		</div>

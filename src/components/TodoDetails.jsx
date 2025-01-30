@@ -15,7 +15,7 @@ const TodoDetails = ({
 				<DialogActions>
 					<Button
 						onClick={() => {
-							setTodoDetails(false);
+							setTodoDetails(null);
 							setOpenModal(false);
 						}}
 					>

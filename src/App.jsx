@@ -15,7 +15,7 @@ function App() {
 			setLoading(true);
 			const apiResponse = await fetch("https://dummyjson.com/todos");
 			const result = await apiResponse.json();
-			console.log(...result.todos);
+			console.log("Todo List:", ...result.todos);
 			if (result?.todos && result?.todos?.length > 0) {
 				setTodoData(result?.todos);
 				setLoading(false);
@@ -44,7 +44,7 @@ function App() {
 			const details = await apiTodoDetail.json();
 			if (details) {
 				setTodoDetails(details);
-				console.log(details);
+				console.log("Todo Details", details);
 				setOpenModal(true);
 			} else {
 				setTodoDetails(null);
@@ -65,7 +65,7 @@ function App() {
 				<h1 className="italic text-3xl text-center underline font-bold my-4">
 					Remedic Todo App
 				</h1>
-				<div className="m-5 space-y-5">
+				<div className="m-5 gap-3 flex flex-wrap">
 					{todoData && todoData.length > 0 ? (
 						todoData.map((todoItem) => (
 							<TodoCard
